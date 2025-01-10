@@ -8,94 +8,145 @@
     />
     <title>Geek Zone - Accueil</title>
     <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
   </head>
 
   <body>
-    <header>
-      <div class="Logo">
-        <a href="index.html">
+    <div id="app">
+      <header>
+        <div class="Logo">
+          <a href="index.html">
+            <img
+              src="pictures/Logo_Geek_Zone.png"
+              alt="Logo de Geek Zone"
+              class="Limbo"
+            />
+          </a>
+        </div>
+        <h1>Accueil</h1>
+
+        <nav>
+          <ul>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Review.html">Review</a></li>
+            <li><a href="Wishlist.html">Wishlist</a></li>
+            <li><a href="Question.html">Question</a></li>
+            <li><a href="Podcast.html">Podcast</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="content">
+        <h2>Bienvenue dans Geek Zone</h2>
+
+        <p>
+          Ici vous pouvez trouver plein <strong>d'information</strong> lié dans
+          <strong>l'univers</strong> du <strong>Jeu video</strong>.<br />
+          Découvrez ma dernière <strong>review</strong> et
+          <strong>rejoignez</strong> notre <strong>communauté</strong> de
+          <strong>passionnée</strong> pour <strong>partager</strong> votre
+          passion le <strong>Gaming</strong>.
+        </p>
+
+        <h3>Affiche de Geek Zone</h3>
+        <div class="bordure-image">
           <img
-            src="pictures/Logo_Geek_Zone.png"
-            alt="Logo de Geek Zone"
+            src="pictures/Affiche_Geek_Zone.jpg"
+            alt="Affiche de Geek Zone"
             class="Limbo"
           />
-        </a>
+        </div>
+        <br />
+        <h3>Progression majeur du site</h3>
+        <p>
+          le contenu de <strong>l'actualisation</strong> du site ou des minise à
+          jours ne sera pas noté.
+        </p>
+
+        <table class="centered-table">
+          <tr>
+            <th>Date</th>
+            <th>Détail</th>
+          </tr>
+          <tr>
+            <td>15.01.2024</td>
+            <td>Lancement du site</td>
+          </tr>
+
+          <tr>
+            <td>15.03.2024</td>
+            <td>Responsible pour les formats téléphone et tablette</td>
+          </tr>
+
+          <tr>
+            <td>26.07.2024</td>
+            <td>Amélioration graphique et de lisibilité majeur</td>
+          </tr>
+
+          <tr>
+            <td>26.07.2024</td>
+            <td>Dernière actualisation du site</td>
+          </tr>
+        </table>
+
+        <h3>Aimez vous le site Web ?</h3>
+        <button @click="increment">
+          <i :class="isLiked ? 'fas fa-heart' : 'fas fa-heart-broken'"></i>
+          {{ isLiked ? "" : "" }} {{totalLikes}}
+        </button>
       </div>
-      <h1>Accueil</h1>
 
-      <nav>
-        <ul>
-          <li><a href="Contact.html">Contact</a></li>
-          <li><a href="Review.html">Review</a></li>
-          <li><a href="Wishlist.html">Wishlist</a></li>
-          <li><a href="Question.html">Question</a></li>
-          <li><a href="Podcast.html">Podcast</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="content">
-      <h2>Bienvenue dans Geek Zone</h2>
-
-      <p>
-        Ici vous pouvez trouver plein <strong>d'information</strong> lié dans
-        <strong>l'univers</strong> du <strong>Jeu video</strong>.<br />
-        Découvrez ma dernière <strong>review</strong> et
-        <strong>rejoignez</strong> notre <strong>communauté</strong> de
-        <strong>passionnée</strong> pour <strong>partager</strong> votre passion
-        le <strong>Gaming</strong>.
-      </p>
-
-      <h3>Affiche de Geek Zone</h3>
-      <div class="bordure-image">
-        <img
-          src="pictures/Affiche_Geek_Zone.jpg"
-          alt="Affiche de Geek Zone"
-          class="Limbo"
-        />
-      </div>
-      <br />
-      <h3>Progression majeur du site</h3>
-      <p>
-        le contenu de <strong>l'actualisation</strong> du site ou des minise à
-        jours ne sera pas noté.
-      </p>
-
-      <table class="centered-table">
-        <tr>
-          <th>Date</th>
-          <th>Détail</th>
-        </tr>
-        <tr>
-          <td>15.01.2024</td>
-          <td>Lancement du site</td>
-        </tr>
-
-        <tr>
-          <td>15.03.2024</td>
-          <td>Responsible pour les formats téléphone et tablette</td>
-        </tr>
-
-        <tr>
-          <td>26.07.2024</td>
-          <td>Amélioration graphique et de lisibilité majeur</td>
-        </tr>
-
-        <tr>
-          <td>26.07.2024</td>
-          <td>Dernière actualisation du site</td>
-        </tr>
-      </table>
+      <footer>
+        <p>&copy; 2024 Geek Zone</p>
+        <p>Contactez le webmaster : cgerber35@outlook.com</p>
+        <p>
+          <a href="Impressum.html">Impressum</a> |
+          <a href="Conditions-utilisation.html">Conditions d'utilisation</a> |
+          <a href="Protection-donnees.html">Protection des données</a>
+        </p>
+      </footer>
     </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: "Aime",
+            isLiked: false,
+            totalLikes: 0,
+          };
+        },
+        created() {
+          const savedLikes = localStorage.getItem("likes");
+          const userLiked = localStorage.getItem("userLiked");
 
-    <footer>
-      <p>&copy; 2024 Geek Zone</p>
-      <p>Contactez le webmaster : cgerber35@outlook.com</p>
-      <p>
-        <a href="Impressum.html">Impressum</a> |
-        <a href="Conditions-utilisation.html">Conditions d'utilisation</a> |
-        <a href="Protection-donnees.html">Protection des données</a>
-      </p>
-    </footer>
+          if (savedLikes) {
+            this.totalLikes = parseInt(savedLikes);
+          }
+          if (userLiked) {
+            this.isLiked = JSON.parse(userLiked);
+          }
+        },
+        methods: {
+          increment() {
+            if (this.isLiked) {
+              this.totalLikes--;
+            } else {
+              this.totalLikes++;
+            }
+            this.isLiked = !this.isLiked;
+
+            localStorage.setItem("likes", this.totalLikes);
+            localStorage.setItem("userLiked", this.isLiked);
+          },
+        },
+      });
+
+      app.mount("#app");
+    </script>
   </body>
 </html>

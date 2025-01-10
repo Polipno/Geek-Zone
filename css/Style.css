@@ -91,6 +91,13 @@ h2 {
   margin: 0 auto;
 }
 
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 .team-member {
   margin-bottom: 10px;
 }
@@ -112,6 +119,15 @@ nav ul li a {
 
 a:hover {
   text-decoration: underline;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #252525;
+  border-radius: 5px;
+  border: 2px solid white;
 }
 
 .responsive-video iframe {
@@ -222,6 +238,9 @@ fieldset {
     padding: 20px 0;
     width: 100%;
     font-size: 40px;
+  }
+  .image-gallery img {
+    max-width: 100%; /* Une image par ligne sur les petits écrans */
   }
   h3 {
     font-size: 40px;
